@@ -10,8 +10,11 @@ btn.addEventListener("click", () => {
 const displyAricles = (obj) => {
   const newArticle = obj.map((item) => {
     const { title, date, length, snippet } = item
-    const formate = new Intl.DateTimeFormat("fr-FR", { dateStyle: "medium" })
-    const dateForm = formate.format(date)
+    const dateForm = new Intl.DateTimeFormat("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }).format(date)
     return `
     <h2 class="subTitle">${title}</h2>
     <p class="info">
